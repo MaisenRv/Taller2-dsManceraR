@@ -1,2 +1,3 @@
-# Taller2-dsManceraR
-Taller 2 en typescript - Santiago Mancera 
+# Taller 2 
+
+> Santiago Mancera
