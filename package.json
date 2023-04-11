@@ -1,0 +1,23 @@
+{
+  "name": "taller2-dsmancerar",
+  "version": "1.0.0",
+  "description": "Taller 2",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaisenRv/Taller2-dsManceraR.git"
+  },
+  "author": "Santiago Mancera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaisenRv/Taller2-dsManceraR/issues"
+  },
+  "homepage": "https://github.com/MaisenRv/Taller2-dsManceraR#readme"
+}
