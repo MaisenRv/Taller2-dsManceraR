@@ -4,10 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Registro de estudiante</title>
 </head>
 <body>
-    
+    <main class="container">
+        <section class="row">
+            <article class="col-md-12">
+                <h1>Registro de Estudiantes</h1>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Registro de Estudiantes
+                </button>
+            </article>
+        </section>
+    </main>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Registro estudiante</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="">
+                <div class="mb-3">
+                    <label for="tipoIdentificacion" class="form-label">Tipo Documento</label>
+                    <select name="tipoIdentificacion" id="tipoIdentificacion" class="form-select">
+                        <option value="1">Cedula</option>
+                        <option value="2">Tarjeta de identidad</option>
+                        <option value="3">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                  <label for="numeroIdentificacion" class="form-label">Numero de identificacion</label>
+                  <input type="text" class="form-control" name="numeroIdentificacion">
+                </div>
+                
+                <div class="mb-3">
+                  <label for="nombres" class="form-label">Nombres</label>
+                  <input type="text" class="form-control" name="nombres">
+                </div>
+                <div class="mb-3">
+                  <label for="apellidos" class="form-label">Apellidos</label>
+                  <input type="text" class="form-control" name="apellidos">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="celular" class="form-label">Celular</label>
+                    <input type="number" class="form-control" name="celular">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="linkedin" class="form-label">Linkedin</label>
+                    <input type="text" class="form-control" name="Linkedin">
+                </div>
+                <div class="mb-3">
+                    <label for="gitHub" class="form-label">GitHub</label>
+                    <input type="text" class="form-control" name="gitHub">
+                </div>
+                    
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
+<!-- Bootstrap 5 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <script type="module" src="../dist/index.js"></script>
 </html>
