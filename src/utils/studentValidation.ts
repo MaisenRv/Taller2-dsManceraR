@@ -5,7 +5,10 @@ export default function isValid(input:HTMLInputElement):Boolean {
         StylesForm.alertInput(input);
         return false;
     }
-    
+    if(input.type == "number" && input.value.length < 5){
+        return false;
+    }
+
     if(input.type == "tel" && input.value.length < 6){
         return false;
     }
