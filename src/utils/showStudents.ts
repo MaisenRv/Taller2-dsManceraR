@@ -31,9 +31,35 @@ export default function showStudents(studentsArray:StudentGet[]){
                             newTdName,
                             newTdLasname,
                             newTdEmail,
-                            newTdState);
+                            newTdState,
+                            createButtonsActions());
 
         tableBodyStudents.appendChild(newTrElement);
     });
 
+}
+
+function createButtonsActions():HTMLTableCellElement{
+    const newTdButtonsActions = document.createElement("td");
+
+    const buttonEdit = document.createElement("button");
+    buttonEdit.type = "button";
+    buttonEdit.classList.add("btn","btn-secondary","mx-1");
+    buttonEdit.textContent = "Editar"
+
+    const buttonChangeStatus = document.createElement("button");
+    buttonChangeStatus.type = "button";
+    buttonChangeStatus.classList.add("btn","btn-danger","mx-1");
+    buttonChangeStatus.textContent = "Desactivar";
+
+    const buttonInfoStudent = document.createElement("button");
+    buttonInfoStudent.type = "button";
+    buttonInfoStudent.classList.add("btn","btn-info","mx-1");
+    buttonInfoStudent.textContent = "Detalle";
+
+    newTdButtonsActions.append(buttonEdit,
+                                buttonChangeStatus,
+                                buttonInfoStudent);   
+
+    return newTdButtonsActions;
 }
