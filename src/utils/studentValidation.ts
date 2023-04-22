@@ -1,4 +1,4 @@
-import StylesForm from "../styles/StylesForm.js";
+import StylesForm from "../styles/Styles.js";
 
 export default function isValid(input:HTMLInputElement):Boolean {
     if (input.value == "") {
