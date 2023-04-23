@@ -8,5 +8,6 @@ interface StudentGet{
     estudiante_id:number
     estudiante_linkedin?:string;
     estudiante_nombres:string;
+    estudiante_numeroIdentificacion?:number;
 }
 export default StudentGet;

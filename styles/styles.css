@@ -1,0 +1,6 @@
+#info-student > li{
+    list-style: none;
+}
+#info-student > li >span{
+    font-weight: bold;
+}
