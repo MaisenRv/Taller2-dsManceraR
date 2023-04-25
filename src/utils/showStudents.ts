@@ -2,6 +2,7 @@ import StudentGet from "../models/studentGetModel.js";
 import token from "../connection/accessToken.js";
 import showStudentDetail from "./showStudentDetail.js";
 import updateStatus from "../events/eventChagedStatusStudent.js";
+import putDataStudentToEdit from "./putDataStudentToEdit.js";
 
 const tableBodyStudents = document.getElementById("tableBodyStudents") as HTMLTableSectionElement;
 
@@ -51,6 +52,10 @@ function createButtonsActions(idStudent:number,statusStudent:string):HTMLTableCe
     buttonEdit.type = "button";
     buttonEdit.classList.add("btn","btn-secondary","mx-1");
     buttonEdit.textContent = "Editar"
+    buttonEdit.setAttribute("data-bs-toggle","modal");
+    buttonEdit.setAttribute("data-bs-target","#modalEditStudent");
+    // Editar estudiente
+    buttonEdit.addEventListener("click",()=> putDataStudentToEdit(token,idStudent));
 
     // Boton para cambiar el estado del estudiante
     const buttonChangeStatus = document.createElement("button");
