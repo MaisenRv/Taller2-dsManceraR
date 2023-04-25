@@ -1,5 +1,5 @@
 import getStudent from "../controllers/getStudent.js";
-import StudentGet from "../models/studentGetModel.js";
+import eventUpdateStudent from "../events/eventUpdateSubmitStudent.js";
 
 function putDataStudentToEdit(token:string, idStudent:number) {
     const idStudentShow = document.getElementById("idStudentShow") as HTMLLabelElement;
@@ -21,6 +21,9 @@ function putDataStudentToEdit(token:string, idStudent:number) {
         linkedinEdit.value = student.estudiante_linkedin!;
         gitHubEdit.value = student.estudiante_github!;
     })
+
+    const btnUpdate = document.getElementById("btnActualizar") as HTMLButtonElement;
+    btnUpdate.addEventListener("click",()=> eventUpdateStudent(token,idStudent));
 }
 
 export default putDataStudentToEdit;

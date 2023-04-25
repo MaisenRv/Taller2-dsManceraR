@@ -13,7 +13,6 @@ async function updateStudent(token:string, idStudent:number ,updatedStudent:Stud
 
     const response = await fetch("https://apiestudiantes.maosystems.dev/estudiantes/"+idStudent, request);
     const data = await response.json();
-    console.log(data);
-    
+    return data;
 }
 export default updateStudent;
