@@ -15,6 +15,17 @@ Entramos en la carperta e instalamos las dependencias.
     cd Taller2-dsManceraR
     npm install 
 
+**Antes de compilar el proyecto debemos hacer lo siguiente:**
+
+1. Entramos a la carpeta src/ y creamos una carpeta con el nombre connection/
+2. Entramos a la carpeta connection/ y creamos el archivo con el nombre accessToken.ts
+3. Agregamos la siguientes lineas de codigo.
+
+        const token:string = "mi token";
+        export default token;
+
+    Donde "mi token" es el token de la API.
+
 Compilamos el proyecto con el siguiente comando.
 
     tsc
