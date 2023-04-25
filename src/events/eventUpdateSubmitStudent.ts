@@ -4,6 +4,16 @@ import updateStudent from "../controllers/updateStudent.js";
 import clearTableStudents from "../utils/clearTableStudents.js";
 import getAllStudents from "../controllers/getAllStudents.js";
 import showStudents from "../utils/showStudents.js";
+import token from "../connection/accessToken.js";
+
+const btnUpdate = document.getElementById("btnActualizar") as HTMLButtonElement;
+btnUpdate.addEventListener("click",()=>{
+    const idStudentShow = document.getElementById("idStudentShow") as HTMLLabelElement;
+    const idStudent = parseInt(localStorage.getItem("CurrentStudent")!);
+    
+    eventUpdateStudent(token,idStudent)
+    localStorage.clear();
+})
 
 function eventUpdateStudent(token:string,idStudent:number) {
     const nombresEdit = document.getElementById("nombresEdit") as HTMLInputElement;
