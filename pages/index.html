@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css">
     <title>Registro de estudiante</title>
 </head>
 <body>
-    <main class="container">
+    <div class="container">
         <section class="row">
             <article class="col-md-12">
                 <h1>Registro de Estudiantes</h1>
@@ -17,8 +18,9 @@
                 </button>
             </article>
         </section>
-    </main>
+      </div>
 
+    <!-- Modal create student -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -27,7 +29,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form id="">
+              <form id="formEstudiante">
                 <div class="mb-3">
                     <label for="tipoIdentificacion" class="form-label">Tipo Documento</label>
                     <select name="tipoIdentificacion" id="tipoIdentificacion" class="form-select">
@@ -38,48 +40,140 @@
                 </div>
                 <div class="mb-3">
                   <label for="numeroIdentificacion" class="form-label">Numero de identificacion</label>
-                  <input type="text" class="form-control" name="numeroIdentificacion">
+                  <input type="number" class="form-control" name="numeroIdentificacion" id="numeroIdentificacion">
                 </div>
                 
                 <div class="mb-3">
                   <label for="nombres" class="form-label">Nombres</label>
-                  <input type="text" class="form-control" name="nombres">
+                  <input type="text" class="form-control" name="nombres" id="nombres">
                 </div>
                 <div class="mb-3">
                   <label for="apellidos" class="form-label">Apellidos</label>
-                  <input type="text" class="form-control" name="apellidos">
+                  <input type="text" class="form-control" name="apellidos" id="apellidos">
                 </div>
                 
                 <div class="mb-3">
                     <label for="celular" class="form-label">Celular</label>
-                    <input type="number" class="form-control" name="celular">
+                    <input type="tel" class="form-control" name="celular" id="celular">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email">
+                    <input type="email" class="form-control" name="email" id="email">
                 </div>
 
                 <div class="mb-3">
                     <label for="linkedin" class="form-label">Linkedin</label>
-                    <input type="text" class="form-control" name="Linkedin">
+                    <input type="url" class="form-control" name="Linkedin" id="linkedin">
                 </div>
                 <div class="mb-3">
                     <label for="gitHub" class="form-label">GitHub</label>
-                    <input type="text" class="form-control" name="gitHub">
+                    <input type="url" class="form-control" name="gitHub" id="gitHub">
                 </div>
                     
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" id="enviar" >Enviar</button>
             </div>
           </div>
         </div>
       </div>
+    <!-- End modal -->
+
+    <!-- Table -->
+    <div class="container mt-3" >
+    <table class="table table-sm table-striped table-hover align-middle">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">ID</th>
+          <th scope="col" class="text-center">Nombres</th>
+          <th scope="col" class="text-center">Apellidos</th>
+          <th scope="col" class="text-center">Correo</th>
+          <th scope="col" class="text-center">Estado</th>
+          <th scope="col" class="text-center">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tableBodyStudents">  </tbody>
+    </table>
+  </div>
+    <!-- End table -->
+
+  <!-- Modal detail-->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="buttonCloseDetailStudent"></button>
+        </div>
+        <div class="modal-body">
+          <div >
+            <ul id="info-student">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End modal detail -->
+
+
+<!-- Modal edit student -->
+  <div class="modal fade" id="modalEditStudent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Editar estudiante</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="btnCloseModalEditStudent"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formEstudiante">
+            <div class="mb-3">
+              <label id="idStudentShow" ></label> <br>
+              <label id="numberIdentificationShow"></label>
+            </div>
+            <div class="mb-3">
+              <label for="nombres" class="form-label">Nombres</label>
+              <input type="text" class="form-control" name="nombres" id="nombresEdit">
+            </div>
+            <div class="mb-3">
+              <label for="apellidos" class="form-label">Apellidos</label>
+              <input type="text" class="form-control" name="apellidos" id="apellidosEdit">
+            </div>
+            
+            <div class="mb-3">
+                <label for="celular" class="form-label">Celular</label>
+                <input type="tel" class="form-control" name="celular" id="celularEdit">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="emailEdit">
+            </div>
+
+            <div class="mb-3">
+                <label for="linkedin" class="form-label">Linkedin</label>
+                <input type="url" class="form-control" name="Linkedin" id="linkedinEdit">
+            </div>
+            <div class="mb-3">
+                <label for="gitHub" class="form-label">GitHub</label>
+                <input type="url" class="form-control" name="gitHub" id="gitHubEdit">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="btnActualizar" data-bs-dismiss="modal" aria-label="Close" >Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+<!-- End modal -->
 <!-- Bootstrap 5 -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+<!-- Scripts -->
+<script type="module" src="../dist/events/eventUpdateSubmitStudent.js"></script>
+<script type="module" src="../dist/events/enventSubmitStudent.js"></script>
+<script type="module" src="../dist/events/eventClearDetailStudent.js"></script>
 <script type="module" src="../dist/index.js"></script>
 </html>
