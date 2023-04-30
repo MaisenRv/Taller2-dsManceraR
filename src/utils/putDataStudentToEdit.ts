@@ -1,4 +1,4 @@
-import getStudent from "../controllers/getStudent.js";
+import getStudent from "../services/getStudent.js";
 
 function putDataStudentToEdit(token:string, idStudent:number) {
     const idStudentShow = document.getElementById("idStudentShow") as HTMLLabelElement;

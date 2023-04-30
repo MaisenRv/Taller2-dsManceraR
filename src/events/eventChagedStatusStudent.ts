@@ -1,7 +1,7 @@
-import changeStatusStudent from "../controllers/changeStatusStudent.js";
+import changeStatusStudent from "../services/changeStatusStudent.js";
 import clearTableStudents from "../utils/clearTableStudents.js";
 import showStudents from "../utils/showStudents.js";
-import getAllStudents from "../controllers/getAllStudents.js";
+import getAllStudents from "../services/getAllStudents.js";
 
 function updateStatus(token:string, idStudent:number,status:string){
     changeStatusStudent(token,idStudent,status).then(response=>{

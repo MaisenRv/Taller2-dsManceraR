@@ -1,4 +1,4 @@
-import getAllStudents from "./controllers/getAllStudents.js";
+import getAllStudents from "./services/getAllStudents.js";
 import showStudents from "./utils/showStudents.js";
 
 // Mi token

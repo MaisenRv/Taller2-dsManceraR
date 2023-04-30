@@ -1,8 +1,8 @@
 import isValid from "../utils/studentValidation.js";
 import Student from "../models/studentPostModel.js";
-import getAllStudents from "../controllers/getAllStudents.js";
+import getAllStudents from "../services/getAllStudents.js";
 import showStudents from "../utils/showStudents.js";
-import createStudent from "../controllers/createStudent.js";
+import createStudent from "../services/createStudent.js";
 import clearTableStudents from "../utils/clearTableStudents.js"
 import token from "../connection/accessToken.js";
 

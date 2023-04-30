@@ -1,4 +1,4 @@
-import getStudent from "../controllers/getStudent.js";
+import getStudent from "../services/getStudent.js";
 import StudentGet from "../models/studentGetModel.js";
 
 export default function showStudentDetail(token:string, idStudent:number){
